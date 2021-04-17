@@ -225,6 +225,11 @@ void* agregarMilanesa(void *data) {
 
 void* ejecutarReceta(void *i) {
 	
+	//variables mutex
+	pthread_mutex mutex_salar;
+	pthread_mutex mutex_cocinar;
+	pthread_mutex mutex_hornear;
+	
 	//variables semaforos
 	sem_t sem_mezclar;
 	sem_t sem_salar;
@@ -312,6 +317,12 @@ void* ejecutarReceta(void *i) {
 	sem_init(&(pthread_data->semaforos_param.sem_agregarOtros),0,0);
 	sem_init(&(pthread_data->semaforos_param.sem_aux),0,0);
 
+	//inicializo los mutex
+	pthread_mutex_init(&mutex_salar, NULL);
+	
+	pthread_mutex_init(&mutex_cocinar, NULL);
+	
+	pthread_mutex_init(&mutex_hornear, NULL);
 
 	//creo los hilos a todos les paso el struct creado (el mismo a todos los hilos) ya que todos comparten los semaforos 
     int rc;
@@ -320,10 +331,84 @@ void* ejecutarReceta(void *i) {
                                 cortar,             //funcion a ejecutar
                                 pthread_data);                     //parametros de la funcion a ejecutar, pasado por referencia
 	//crear demas hilos aqui
+	rc=pthread_create(&p2;NULL,cortar,pthread_data);
+	rc=pthread_create(&p3;NULL,cortar,pthread_data);
+	rc=pthread_create(&p4;NULL,cortar,pthread_data);
 	
+	rc=pthread_create(&p1;NULL,mezclar,pthread_data);
+	rc=pthread_create(&p2;NULL,mezclar,pthread_data);
+	rc=pthread_create(&p3;NULL,mezclar,pthread_data);
+	rc=pthread_create(&p4;NULL,mezclar,pthread_data);
+	
+	pthread_mutex_lock(&mutex_salar,NULL);
+	rc=pthread_create(&p1;NULL,salar,pthread_data);
+	pthread_mutex-unlock(&mutex_salar,NULL);
+	pthread_mutex_lock(&mutex_salar,NULL);
+	rc=pthread_create(&p2;NULL,salar,pthread_data);
+	pthread_mutex-unlock(&mutex_salar,NULL);
+	pthread_mutex_lock(&mutex_salar,NULL);
+	rc=pthread_create(&p3;NULL,salar,pthread_data);
+	pthread_mutex-unlock(&mutex_salar,NULL);
+	pthread_mutex_lock(&mutex_salar,NULL);
+	rc=pthread_create(&p4;NULL,salar,pthread_data);
+	pthread_mutex-unlock(&mutex_salar,NULL);
+	
+	rc=pthread_create(&p1;NULL,agregarCarne,pthread_data);
+	rc=pthread_create(&p2;NULL,agregarCarne,pthread_data);
+	rc=pthread_create(&p3;NULL,agregarCarne,pthread_data);
+	rc=pthread_create(&p4;NULL,agregarCarne,pthread_data);
+	
+	rc=pthread_create(&p1;NULL,empanar,pthread_data);
+	rc=pthread_create(&p2;NULL,empanar,pthread_data);
+	rc=pthread_create(&p3;NULL,empanar,pthread_data);
+	rc=pthread_create(&p4;NULL,empanar,pthread_data);
+	
+	pthread_mutex_lock(&mutex_cocinar,NULL);
+	rc=pthread_create(&p1;NULL,cocinar,pthread_data);
+	pthread_mutex-unlock(&mutex_cocinar,NULL);
+	pthread_mutex_lock(&mutex_cocinar,NULL);
+	rc=pthread_create(&p2;NULL,cocinar,pthread_data);
+	pthread_mutex-unlock(&mutex_cocinar,NULL);
+	pthread_mutex_lock(&mutex_cocinar,NULL);
+	rc=pthread_create(&p3;NULL,cocinar,pthread_data);
+	pthread_mutex-unlock(&mutex_cocinar,NULL);
+	pthread_mutex_lock(&mutex_cocinar,NULL);
+	rc=pthread_create(&p4;NULL,cocinar,pthread_data);
+	pthread_mutex-unlock(&mutex_cocinar,NULL);
+	
+	rc=pthread_create(&p1;NULL,agregarMilanesa,pthread_data);
+	rc=pthread_create(&p2;NULL,agregarMilanesa,pthread_data);
+	rc=pthread_create(&p3;NULL,agregarMilanesa,pthread_data);
+	rc=pthread_create(&p4;NULL,agregarMilanesa,pthread_data);
+	
+	pthread_mutex_lock(&mutex_hornear,NULL);
+	rc=pthread_create(&p1;NULL,hornearPan,pthread_data);
+	pthread_mutex-unlock(&mutex_hornear,NULL);
+	pthread_mutex_lock(&mutex_hornear,NULL);
+	rc=pthread_create(&p2;NULL,hornearPan,pthread_data);
+	pthread_mutex-unlock(&mutex_hornear,NULL);
+	pthread_mutex_lock(&mutex_hornear,NULL);
+	rc=pthread_create(&p3;NULL,hornearPan,pthread_data);
+	pthread_mutex-unlock(&mutex_hornear,NULL);
+	pthread_mutex_lock(&mutex_hornear,NULL);
+	rc=pthread_create(&p4;NULL,hornearPan,pthread_data);
+	pthread_mutex-unlock(&mutex_hornear,NULL);
+	
+	rc=pthread_create(&p1;NULL,cortarPan,pthread_data);
+	rc=pthread_create(&p2;NULL,cortarPan,pthread_data);
+	rc=pthread_create(&p3;NULL,cortarPan,pthread_data);
+	rc=pthread_create(&p4;NULL,cortarPan,pthread_data);
+	
+	rc=pthread_create(&p1;NULL,agregarOtros,pthread_data);
+	rc=pthread_create(&p2;NULL,agregarOtros,pthread_data);
+	rc=pthread_create(&p3;NULL,agregarOtros,pthread_data);
+	rc=pthread_create(&p4;NULL,agregarOtros,pthread_data);
 	
 	//join de todos los hilos
 	pthread_join (p1,NULL);
+	pthread_join (p2,NULL);
+	pthread_join (p3,NULL);
+	pthread_join (p4,NULL);
 	//crear join de demas hilos
 
 
@@ -335,8 +420,22 @@ void* ejecutarReceta(void *i) {
 
 	 
 	//destruccion de los semaforos 
-	sem_destroy(&sem_mezclar); 
-	//destruir demas semaforos 
+	sem_destroy(&sem_mezclar);
+	sem_destroy(&sem_salar);
+	sem_destroy(&sem_agregarCarne);
+	sem_destroy(&sem_empanar);
+	sem_destroy(&sem_cocinar);
+	sem_destroy(&sem_cortarPan);
+	sem_destroy(&sem_agregarMilanesa);
+	sem_destroy(&sem_agregarOtros);
+	sem_destroy(&sem_aux);
+	//destruir demas semaforos
+	
+	//destruirMutex
+	pthtread_mutex_destroy(&mutex_salar,NULL);
+	pthtread_mutex_destroy(&mutex_cocinar,NULL);
+	pthtread_mutex_destroy(&mutex_hornear,NULL);
+	
 	
 	//salida del hilo
 	 pthread_exit(NULL);
@@ -369,6 +468,14 @@ int main ()
                             NULL,                          //atributos del thread
                                 ejecutarReceta,             //funcion a ejecutar
                                 equipoNombre2);
+	rc = pthread_create(&equipo3,                           //identificador unico
+                            NULL,                          //atributos del thread
+                                ejecutarReceta,             //funcion a ejecutar
+                                equipoNombre3);
+	rc = pthread_create(&equipo4,                           //identificador unico
+                            NULL,                          //atributos del thread
+                                ejecutarReceta,             //funcion a ejecutar
+                                equipoNombre4);
   //faltn inicializaciones
 
 
