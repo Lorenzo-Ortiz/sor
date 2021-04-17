@@ -11,6 +11,15 @@
 //creo estructura de semaforos 
 struct semaforos {
     sem_t sem_mezclar;
+	sem_t sem_salar;
+	sem_t sem_agregarCarne;
+	sem_t sem_empanar;
+	sem_t sem_cocinar;
+	sem_t sem_agregarMilanesa;
+	sem_t sem_cortarPan;
+	sem_t sem_agra¿egarOtros;
+	sem_t sem_aux;
+	
 	//poner demas semaforos aqui
 };
 
@@ -70,14 +79,170 @@ void* cortar(void *data) {
     pthread_exit(NULL);
 }
 
+void* mezclar(void *data) {
+	sem_wait(&mydata->semaforos_param.sem_mezclar)
+	//creo el nombre de la accion de la funcion 
+	char *accion = "mezclar";
+	//creo el puntero para pasarle la referencia de memoria (data) del struct pasado por parametro (la cual es un puntero). 
+	struct parametro *mydata = data;
+	//llamo a la funcion imprimir le paso el struct y la accion de la funcion
+	imprimirAccion(mydata,accion);
+	//uso sleep para simular que que pasa tiempo
+	usleep( 20000 );
+	//doy la señal a la siguiente accion (cortar me habilita mezclar)
+    sem_post(&mydata->semaforos_param.sem_salar);
+	
+    pthread_exit(NULL);
+}
+
+void* salar(void *data) {
+	sem_wait(&mydata->semaforos_param.sem_salar)
+	//creo el nombre de la accion de la funcion 
+	char *accion = "salar";
+	//creo el puntero para pasarle la referencia de memoria (data) del struct pasado por parametro (la cual es un puntero). 
+	struct parametro *mydata = data;
+	//llamo a la funcion imprimir le paso el struct y la accion de la funcion
+	imprimirAccion(mydata,accion);
+	//uso sleep para simular que que pasa tiempo
+	usleep( 20000 );
+	//doy la señal a la siguiente accion (cortar me habilita mezclar)
+    sem_post(&mydata->semaforos_param.sem_agregarCarne);
+	
+    pthread_exit(NULL);
+}
+void* agregarCarne(void *data) {
+	sem_wait(&mydata->semaforos_param.sem_agregarCarne)
+	//creo el nombre de la accion de la funcion 
+	char *accion = "agregarCarne";
+	//creo el puntero para pasarle la referencia de memoria (data) del struct pasado por parametro (la cual es un puntero). 
+	struct parametro *mydata = data;
+	//llamo a la funcion imprimir le paso el struct y la accion de la funcion
+	imprimirAccion(mydata,accion);
+	//uso sleep para simular que que pasa tiempo
+	usleep( 20000 );
+	//doy la señal a la siguiente accion (cortar me habilita mezclar)
+    sem_post(&mydata->semaforos_param.sem_empanar);
+	
+    pthread_exit(NULL);
+}
+
+void* empanar(void *data) {
+	sem_wait(&mydata->semaforos_param.sem_empanar)
+	//creo el nombre de la accion de la funcion 
+	char *accion = "empanar";
+	//creo el puntero para pasarle la referencia de memoria (data) del struct pasado por parametro (la cual es un puntero). 
+	struct parametro *mydata = data;
+	//llamo a la funcion imprimir le paso el struct y la accion de la funcion
+	imprimirAccion(mydata,accion);
+	//uso sleep para simular que que pasa tiempo
+	usleep( 20000 );
+	//doy la señal a la siguiente accion (cortar me habilita mezclar)
+    sem_post(&mydata->semaforos_param.sem_cocinar);
+	
+    pthread_exit(NULL);
+}
+
+void* cocinar(void *data) {
+	sem_wait(&mydata->semaforos_param.sem_empanar)
+	//creo el nombre de la accion de la funcion 
+	char *accion = "cocinar";
+	//creo el puntero para pasarle la referencia de memoria (data) del struct pasado por parametro (la cual es un puntero). 
+	struct parametro *mydata = data;
+	//llamo a la funcion imprimir le paso el struct y la accion de la funcion
+	imprimirAccion(mydata,accion);
+	//uso sleep para simular que que pasa tiempo
+	usleep( 20000 );
+	//doy la señal a la siguiente accion (cortar me habilita mezclar)
+    sem_post(&mydata->semaforos_param.sem_agregarMilanesa);
+	
+    pthread_exit(NULL);
+}
+
+void* hornearPan(void *data) {
+	//creo el nombre de la accion de la funcion 
+	char *accion = "hornearPan";
+	//creo el puntero para pasarle la referencia de memoria (data) del struct pasado por parametro (la cual es un puntero). 
+	struct parametro *mydata = data;
+	//llamo a la funcion imprimir le paso el struct y la accion de la funcion
+	imprimirAccion(mydata,accion);
+	//uso sleep para simular que que pasa tiempo
+	usleep( 20000 );
+	//doy la señal a la siguiente accion (cortar me habilita mezclar)
+    sem_post(&mydata->semaforos_param.sem_cortarPan);
+	
+    pthread_exit(NULL);
+}
+void* cortarPan(void *data) {
+	sem_wait(&mydata->semaforos_param.sem_cortarPan)
+	//creo el nombre de la accion de la funcion 
+	char *accion = "cortarPan";
+	//creo el puntero para pasarle la referencia de memoria (data) del struct pasado por parametro (la cual es un puntero). 
+	struct parametro *mydata = data;
+	//llamo a la funcion imprimir le paso el struct y la accion de la funcion
+	imprimirAccion(mydata,accion);
+	//uso sleep para simular que que pasa tiempo
+	usleep( 20000 );
+	//doy la señal a la siguiente accion (cortar me habilita mezclar)
+    sem_post(&mydata->semaforos_param.sem_aux);
+	sem_post(&mydara->semaforos_param.sem_agregarOtros);
+	
+    pthread_exit(NULL);
+}
+
+void* agregarOtros(void *data) {
+	sem_wait(&mydata->semaforos_param.sem_cortarPan)
+	//creo el nombre de la accion de la funcion 
+	char *accion = "agregarOtros";
+	//creo el puntero para pasarle la referencia de memoria (data) del struct pasado por parametro (la cual es un puntero). 
+	struct parametro *mydata = data;
+	//llamo a la funcion imprimir le paso el struct y la accion de la funcion
+	imprimirAccion(mydata,accion);
+	//uso sleep para simular que que pasa tiempo
+	usleep( 20000 );
+	//doy la señal a la siguiente accion (cortar me habilita mezclar)
+   
+	
+    pthread_exit(NULL);
+}
+void* agregarMilanesa(void *data) {
+	sem_wait(&mydata->semaforos_param.sem_aux);
+	sem_wait(&mydata->semaforos_param.sem_cocinar);
+	//creo el nombre de la accion de la funcion 
+	char *accion = "empanar";
+	//creo el puntero para pasarle la referencia de memoria (data) del struct pasado por parametro (la cual es un puntero). 
+	struct parametro *mydata = data;
+	//llamo a la funcion imprimir le paso el struct y la accion de la funcion
+	imprimirAccion(mydata,accion);
+	//uso sleep para simular que que pasa tiempo
+	usleep( 20000 );
+	//doy la señal a la siguiente accion (cortar me habilita mezclar)
+	
+    pthread_exit(NULL);
+}
+
+
+
+
 void* ejecutarReceta(void *i) {
 	
 	//variables semaforos
 	sem_t sem_mezclar;
+	sem_t sem_salar;
+	sem_t sem_agregarCarne;
+	sem_t sem_empanar;
+	sem_t sem_cocinar;
+	sem_t sem_cortarPan;
+	sem_t sem_agregarMilanesa;
+	sem_t sem_agregarOtros;
+	sem_t sem_aux;
+	
 	//crear variables semaforos aqui
 	
 	//variables hilos
-	pthread_t p1; 
+	pthread_t p1;
+	pthread_t p2;
+	pthread_t p3;
+	pthread_t p4;
 	//crear variables hilos aqui
 	
 	//numero del equipo (casteo el puntero a un int)
@@ -96,6 +261,14 @@ void* ejecutarReceta(void *i) {
 	//seteo semaforos
 	pthread_data->semaforos_param.sem_mezclar = sem_mezclar;
 	//setear demas semaforos al struct aqui
+	pthread_data->semaforos_param.sem_mezclar = sem_salar;
+	pthread_data->semaforos_param.sem_mezclar = sem_agregarCarne;
+	pthread_data->semaforos_param.sem_mezclar = sem_empanar;
+	pthread_data->semaforos_param.sem_mezclar = sem_cocinar;
+	pthread_data->semaforos_param.sem_mezclar = sem_agregarMilanesa;
+	pthread_data->semaforos_param.sem_mezclar = sem_cortarPan;
+	pthread_data->semaforos_param.sem_mezclar = sem_agregarOtros;
+	pthread_data->semaforos_param.sem_mezclar = sem_aux;
 	
 
 	//seteo las acciones y los ingredientes (Faltan acciones e ingredientes) ¿Se ve hardcodeado no? ¿Les parece bien?
@@ -110,11 +283,34 @@ void* ejecutarReceta(void *i) {
  	    strcpy(pthread_data->pasos_param[1].ingredientes[2], "huevo");
 	    strcpy(pthread_data->pasos_param[1].ingredientes[3], "carne");
 	
+	strcpy(pthread_data->pasos_param[1].accion, "salar");
+	
+	strcpy(pthread_data->pasos_param[1].accion, "agregarCarne");
+	
+	strcpy(pthread_data->pasos_param[1].accion, "empanar");
+	
+	strcpy(pthread_data->pasos_param[1].accion, "cocinar");
+	
+	strcpy(pthread_data->pasos_param[1].accion, "agregarMilanesa");
+	
+	strcpy(pthread_data->pasos_param[1].accion, "hornearPan");
+	
+	strcpy(pthread_data->pasos_param[1].accion, "cortarPan");
+	
+	strcpy(pthread_data->pasos_param[1].accion, "agregarOtros");
 	
 	//inicializo los semaforos
 
 	sem_init(&(pthread_data->semaforos_param.sem_mezclar),0,0);
 	//inicializar demas semaforos aqui
+	sem_init(&(pthread_data->semaforos_param.sem_salar),0,0);
+	sem_init(&(pthread_data->semaforos_param.sem_agregarCarne),0,0);
+	sem_init(&(pthread_data->semaforos_param.sem_empanar),0,0);
+	sem_init(&(pthread_data->semaforos_param.sem_cocinar),0,0);
+	sem_init(&(pthread_data->semaforos_param.sem_agregarMilanesa),0,0);
+	sem_init(&(pthread_data->semaforos_param.sem_cortarPan),0,0);
+	sem_init(&(pthread_data->semaforos_param.sem_agregarOtros),0,0);
+	sem_init(&(pthread_data->semaforos_param.sem_aux),0,0);
 
 
 	//creo los hilos a todos les paso el struct creado (el mismo a todos los hilos) ya que todos comparten los semaforos 
@@ -139,7 +335,7 @@ void* ejecutarReceta(void *i) {
 
 	 
 	//destruccion de los semaforos 
-	sem_destroy(&sem_mezclar);
+	sem_destroy(&sem_mezclar); 
 	//destruir demas semaforos 
 	
 	//salida del hilo
@@ -184,6 +380,8 @@ int main ()
 	//join de todos los hilos
 	pthread_join (equipo1,NULL);
 	pthread_join (equipo2,NULL);
+	pthread_join (equipo3,NULL);
+	pthread_join (equipo4,NULL);
 //.. faltan joins
 
 
