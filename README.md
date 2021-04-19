@@ -7,14 +7,14 @@ En primer lugar vamos a definir las acciones que tenemos que llevar a cabo, para
 
 Acciones
 
-*cortar ajo perejil
-*mezclar con el huevo
-*salar
-*agregar carne
-*empanar
-*cocinar
-*hornear pan
-*armar milanesa
+cortar ajo perejil
+mezclar con el huevo
+salar
+agregar carne
+empanar
+cocinar
+hornear pan
+armar milanesa
 
 Un dato importante a tener en cuenta es que hay acciones que los equipos no van a poder implementarlas en simultaneo.
 En tal caso van a tener que aguardar que, en el caso de que se esten llevando a cabo, que otro equipo termine.
