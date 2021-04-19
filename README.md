@@ -35,7 +35,7 @@ Las demas las sincronizamos con semáforos.
 
     sem_mezclar=	       	  100000000000
 
-    sem_salar=	        001000000000
+    sem_salar=	          001000000000
 
     sem_agrcarne=	          000010000000
 
@@ -51,8 +51,8 @@ Las demas las sincronizamos con semáforos.
 
 
                                       lock(salar)		   	              lock(cocinar)	 lock(hornear)       v_armarMil
-
-                    v_mezclar         v_salar        v_agrcarne      v_empanar	      v_cocinar                              v_aux
+ 
+                    v_mezclar         v_salar        v_agrcarne      v_empanar	   v_cocinar                               v_aux
 
       cortar()      mezclar()         salar()        agrcarne()       empanar()       cocinar()           hornear()          armarMilanesa()
 
