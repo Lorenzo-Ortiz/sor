@@ -25,21 +25,28 @@ Las demas las sincronizamos con semáforos.
 # Pseudocodigo y prueba de escritorio:
 
 sem_aux=    	  001111111110
+
 sem_mezclar=	  100000000000
+
 sem_salar=	    001000000000
+
 sem_agrcarne=	  000010000000
+
 sem_empanar=	  000000100000
+
 sem_cocinar=	  000000001000
+
 sem_armarMilan=	000000000010
+
 sem_hornear=	  100000000000
 
 
 
-                             lock(salar)		   	                    	   lock(cocinar)	  lock(hornear)     v_armarMil
-              v_mezclar        v_salar      v_agrcarne      v_empanar	    v_cocinar                           v_aux
+.                             lock(salar)		   	         lock(cocinar)	  lock(hornear)     v_armarMil
+.             v_mezclar        v_salar      v_agrcarne      v_empanar	  v_cocinar                           v_aux
 cortar()      mezclar()         salar()      agrcarne()      empanar()   cocinar()          hornear()       armarMilanesa() 
-s_mezc        s_salar         s_agrcarne    s_empanar       s_cocinar    s_armarMil          sem_aux             
-		         unlock(salar)			                                       unlock(cocinar)	  unlock(hornear)
+s_mezc        s_salar         s_agrcarne    s_empanar       s_cocinar    s_armarMil         sem_aux             
+.		         unlock(salar)			                                  unlock(cocinar)   unlock(hornear)
 
 
 sem_wait()=v;
