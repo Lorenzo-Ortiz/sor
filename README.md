@@ -35,7 +35,7 @@ Las demas las sincronizamos con semáforos.
 
     sem_mezclar=	       	  100000000000
 
-    sem_salar=	        	  001000000000
+    sem_salar=	        001000000000
 
     sem_agrcarne=	          000010000000
 
