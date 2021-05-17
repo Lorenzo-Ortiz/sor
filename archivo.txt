@@ -1,0 +1,181 @@
+----------------COMIENZA EL JUEGO--------------
+ 
+ 
+	Equipo 3 - accion cortar 
+ 	Equipo 3 -----------ingredientes : ----------
+	Equipo 3 ingrediente  0 :  ajo  
+	Equipo 3 ingrediente  1 :  perejil 
+ 
+   
+	Equipo 2 - accion cortar 
+ 	Equipo 2 -----------ingredientes : ----------
+	Equipo 2 ingrediente  0 :  ajo  
+	Equipo 2 ingrediente  1 :  perejil 
+ 
+   
+	Equipo 3 - accion hornear Pan 
+ 	Equipo 3 -----------ingredientes : ----------
+	Equipo 3 ingrediente  0 :  masa de pan 
+ 
+   
+	Equipo 4 - accion cortar 
+ 	Equipo 4 -----------ingredientes : ----------
+	Equipo 4 ingrediente  0 :  ajo  
+	Equipo 4 ingrediente  1 :  perejil 
+ 
+   
+	Equipo 1 - accion cortar 
+ 	Equipo 1 -----------ingredientes : ----------
+	Equipo 1 ingrediente  0 :  ajo  
+	Equipo 1 ingrediente  1 :  perejil 
+ 
+   
+	Equipo 3 - accion mezclar 
+ 	Equipo 3 -----------ingredientes : ----------
+	Equipo 3 ingrediente  0 :  ajo  
+	Equipo 3 ingrediente  1 :  perejil  
+	Equipo 3 ingrediente  2 :  huevo 
+ 
+   
+	Equipo 2 - accion mezclar 
+ 	Equipo 2 -----------ingredientes : ----------
+	Equipo 2 ingrediente  0 :  ajo  
+	Equipo 2 ingrediente  1 :  perejil  
+	Equipo 2 ingrediente  2 :  huevo 
+ 
+   
+	Equipo 2 - accion hornear Pan 
+ 	Equipo 2 -----------ingredientes : ----------
+	Equipo 2 ingrediente  0 :  masa de pan 
+ 
+   
+	Equipo 4 - accion mezclar 
+ 	Equipo 4 -----------ingredientes : ----------
+	Equipo 4 ingrediente  0 :  ajo  
+	Equipo 4 ingrediente  1 :  perejil  
+	Equipo 4 ingrediente  2 :  huevo 
+ 
+   
+	Equipo 1 - accion mezclar 
+ 	Equipo 1 -----------ingredientes : ----------
+	Equipo 1 ingrediente  0 :  ajo  
+	Equipo 1 ingrediente  1 :  perejil  
+	Equipo 1 ingrediente  2 :  huevo 
+ 
+   
+	Equipo 3 - accion salar 
+ 	Equipo 3 -----------ingredientes : ----------
+	Equipo 3 ingrediente  0 :  ajo  
+	Equipo 3 ingrediente  1 :  perejil  
+	Equipo 3 ingrediente  2 :  huevo 
+ 
+   
+	Equipo 4 - accion hornear Pan 
+ 	Equipo 4 -----------ingredientes : ----------
+	Equipo 4 ingrediente  0 :  masa de pan 
+ 
+   
+   
+	Equipo 2 - accion salar 
+ 	Equipo 2 -----------ingredientes : ----------
+	Equipo 2 ingrediente  0 :  ajo  
+	Equipo 2 ingrediente  1 :  perejil  
+	Equipo 2 ingrediente  2 :  huevo 
+ 
+   
+	Equipo 1 - accion hornear Pan 
+ 	Equipo 1 -----------ingredientes : ----------
+	Equipo 1 ingrediente  0 :  masa de pan 
+ 
+   
+	Equipo 3 - accion empanar 
+ 	Equipo 3 -----------ingredientes : ----------
+	Equipo 3 ingrediente  0 :  ajo  
+	Equipo 3 ingrediente  1 :  perejil  
+	Equipo 3 ingrediente  2 :  huevo 
+	Equipo 3 ingrediente  3 :  carne 
+ 
+   
+	Equipo 4 - accion salar 
+ 	Equipo 4 -----------ingredientes : ----------
+	Equipo 4 ingrediente  0 :  ajo  
+	Equipo 4 ingrediente  1 :  perejil  
+	Equipo 4 ingrediente  2 :  huevo 
+ 
+   
+   
+	Equipo 3 - accion cocinar 
+ 	Equipo 3 -----------ingredientes : ----------
+	Equipo 3 ingrediente  0 : milanesa 
+ 
+   
+   
+	Equipo 2 - accion empanar 
+ 	Equipo 2 -----------ingredientes : ----------
+	Equipo 2 ingrediente  0 :  ajo  
+	Equipo 2 ingrediente  1 :  perejil  
+	Equipo 2 ingrediente  2 :  huevo 
+	Equipo 2 ingrediente  3 :  carne 
+ 
+   
+	Equipo 1 - accion salar 
+ 	Equipo 1 -----------ingredientes : ----------
+	Equipo 1 ingrediente  0 :  ajo  
+	Equipo 1 ingrediente  1 :  perejil  
+	Equipo 1 ingrediente  2 :  huevo 
+ 
+   
+   
+	Equipo 4 - accion empanar 
+ 	Equipo 4 -----------ingredientes : ----------
+	Equipo 4 ingrediente  0 :  ajo  
+	Equipo 4 ingrediente  1 :  perejil  
+	Equipo 4 ingrediente  2 :  huevo 
+	Equipo 4 ingrediente  3 :  carne 
+ 
+   
+	Equipo 2 - accion cocinar 
+ 	Equipo 2 -----------ingredientes : ----------
+	Equipo 2 ingrediente  0 : milanesa 
+ 
+   
+   
+   
+	Equipo 4 - accion cocinar 
+ 	Equipo 4 -----------ingredientes : ----------
+	Equipo 4 ingrediente  0 : milanesa 
+ 
+   
+   
+	Equipo 1 - accion empanar 
+ 	Equipo 1 -----------ingredientes : ----------
+	Equipo 1 ingrediente  0 :  ajo  
+	Equipo 1 ingrediente  1 :  perejil  
+	Equipo 1 ingrediente  2 :  huevo 
+	Equipo 1 ingrediente  3 :  carne 
+ 
+   
+        * El Equipo 3 termino el Sandwich!!! Felictaciones. Tienen el trabajo!  *
+
+   
+   
+	Equipo 1 - accion cocinar 
+ 	Equipo 1 -----------ingredientes : ----------
+	Equipo 1 ingrediente  0 : milanesa 
+ 
+   
+   
+   
+   
+        Equipo 1 - accion armar sandwich 
+        Equipo 4 - accion armar sandwich 
+        Equipo 2 - accion armar sandwich 
+        Equipo 1 - accion agregar carne 
+ 
+        Equipo 3 - accion armar sandwich 
+        Equipo 4 - accion agregar carne 
+ 
+        Equipo 2 - accion agregar carne 
+ 
+        Equipo 3 - accion agregar carne 
+ 
