@@ -1,5 +1,18 @@
+
+![descarga](https://user-images.githubusercontent.com/82615314/118425019-af799180-b69e-11eb-970b-f05e2b78cb00.png)
+
+
+
+
+
 # SOR-Semáforos-1S-2021
+
 Trabajo Práctico Semáforos primer semestre año 2021
+
+# *Profesores:*
+# ● Mariano Vargas
+# ● Noelia Sosa
+# ● Ignacio Tula
 
 # Alumno: Lorenzo Ortiz,
 
@@ -12,7 +25,10 @@ Toda la informacion del proceso será guardado en un documento.
 
 
 
-*ACCIONES
+
+
+
+*ACCIONES*
 
 En primer lugar vamos a definir las acciones que tenemos que llevar a cabo, para luego convertirlas en funciones y sincronizarlas.
 
@@ -32,6 +48,9 @@ cocinar.
 hornear pan.
 
 armar milanesa.
+
+
+
 
 
 *SEMAFOROS*
@@ -85,7 +104,12 @@ mutex_lock()=lock
 mutex_unlock()=unlock 
 
 
+
+
+
+
 *MUTEX*
+
 
 Como antes mencionamos, se tuvo que utilizar distintos mutex para controlar las acciones en el armado del sandwich pero tambien para coordinar otras acciones. A continuacion se detallan los mutex que se utilizaron:
 
@@ -96,13 +120,24 @@ Como antes mencionamos, se tuvo que utilizar distintos mutex para controlar las 
 	pthread_mutex_t ganador = PTHREAD_MUTEX_INITIALIZER;
 
 
+
+
+
+
+
 *GUARDAR SALIDA*
+
 
 Todos los procesos que se fueron desarrollando se van a guardar en un documento txt que se encuentra subido al proyecto. El archivo esta guardado con el nombre archivo.txt
 
 
 
+
+
+
+
 *DIFICULTADES Y CONCLUSIONES*
+
 
 Dentro de las principales consecuencias que encontré en el armado del proceso fue la de incluir los mutex y hacerlos funcionar de la manera adecuada. No podia descifrar la ubicacion dentro del proyecto. 
 Por otra parte, me tomó mucho tiempo tratar de utilizar algun metodo para poder levantar los ingredientes de una receta de formato txt. Este fue un gran desafío que lo pude resolver.
