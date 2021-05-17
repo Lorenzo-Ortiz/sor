@@ -13,6 +13,7 @@ FILE* receta;
 FILE* archivo; //archivo txt para guardar el proceso
 
 int equipoGanador=0;
+int control=0;
 
 //creo estructura de semaforos 
 struct semaforos {
@@ -167,10 +168,8 @@ void* agregarCarne(void *data) {
 	//creo el puntero para pasarle la referencia de memoria (data) del struct pasado por parametro (la cual es un puntero) 
 	//llamo a la funcion imprimir le paso el struct y la accion de la funcion
 	imprimirAccion(mydata,accion);
-	archivo = fopen("archivo.txt", "a");
-	printf("        Equipo %d - accion agregar carne \n \n", mydata->equipo_param);
-	fprintf(archivo,"        Equipo %d - accion agregar carne \n \n", mydata->equipo_param);
-	//uso sleep para simular que que pasa tiempo
+		printf("        Equipo %d - accion agregar carne \n \n", mydata->equipo_param);
+		//uso sleep para simular que que pasa tiempo
 	usleep( 60000 );
 	//doy la señal a la siguiente accion (cortar me habilita mezclar)
 	sem_post(&mydata->semaforos_param.sem_empanar);
@@ -256,10 +255,19 @@ void* armarMilanesa(void *data) {
 	sem_wait(&mydata->semaforos_param.sem_armarMilanesa);
 	
 	char *accion = "armar milanesa";
-
+	
+	
+	while (control==0){
 	archivo = fopen("archivo.txt", "a");
 
 	fprintf(archivo, "        Equipo %d - accion armar sandwich \n", mydata->equipo_param);
+	fprintf(archivo,"                 -----------ingredientes : ----------\n", mydata->equipo_param);
+	fprintf(archivo,"                 ingrediente 0 : verduras(lechuga, cebolla, pepino)\n\n", mydata->equipo_param);
+	control += *((int *) &mydata->equipo_param);
+	control++;
+
+}
+
 
 	
 	//creo el nombre de la accion de la funcion 
@@ -310,8 +318,12 @@ void* ganar(void *data) {
 
 
 	printf("\n");
+	
+	fprintf(archivo, "        *************************************************************************\n", mydata->equipo_param);
 
 	fprintf(archivo,"        * El Equipo %d termino el Sandwich!!! Felictaciones. Tienen el trabajo!  *\n", mydata->equipo_param);
+	fprintf(archivo, "        *************************************************************************\n", mydata->equipo_param);
+
 	fprintf(archivo, "\n");
 
 	fclose(archivo);
