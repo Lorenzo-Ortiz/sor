@@ -1,0 +1,9 @@
+paso 1|cortar | ajo | perejil 
+paso 2|mezclar | ajo | perejil | huevo 
+paso 3|salar | ajo | perejil | huevo 
+paso 4|agregarCarne | carne 
+paso 5|empanar | ajo | perejil | huevo| carne 
+paso 6|cocinar |milanesa 
+paso 7|hornearPan | masa de pan 
+paso 8|armarMilanesa| milanesa | lechuga | tomate | cebolla 
+
